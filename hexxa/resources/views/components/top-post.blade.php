@@ -15,7 +15,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="section-title text-right mt-10">
-                            <a href="/category">See All Posts <i class="fal fa-long-arrow-right"></i></a>
+                            <a href="/all-post">See All Posts <i class="fal fa-long-arrow-right"></i></a>
                         </div>
 
                     </div>
@@ -82,11 +82,9 @@
 
                     <section class="tags-store mb-30">
                         <h2>Tags</h2>
-
-                            <a href="">PHP</a>
-                            <a href="">PHP</a>
-                            <a href="">PHP</a>
-
+                        @foreach($categories as $category)
+                            <a href="/category/{{$category->slug}}">{{$category->title}}</a>
+                        @endforeach
                     </section>
 
 

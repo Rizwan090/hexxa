@@ -10,12 +10,7 @@
                 </div>
 
             </div>
-            <div class="col-lg-6">
-                <div class="section-title text-right mt-10">
-                    <a href="#">See All Posts <i class="fal fa-long-arrow-right"></i></a>
-                </div>
 
-            </div>
 
         </div>
         <div class="row">

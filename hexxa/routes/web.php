@@ -30,6 +30,10 @@ Route::prefix('')->group(function () {
     Route::get('register', [PostController::class, 'registerr']);
     Route::get('posts/{post:slug}', [PostController::class, 'blog_details']);
 
+    Route::get('all-post/{page?}', [PostController::class, 'index'])->where('page', '[0-9]+')->name('posts.index');
+
+
+
 });
 
 

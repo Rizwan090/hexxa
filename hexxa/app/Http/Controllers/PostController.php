@@ -68,15 +68,22 @@ class PostController extends Controller
 
     public function blog_details(Post $post)
     {
-        return view('blog-details',[
-            'post'=>$post
+        // Eager load comments with the post
+        $post = $post->load('comments');
+
+        return view('blog-details', [
+            'post' => $post
         ]);
     }
 
 
+
+
     public function index()
     {
-        return view('posts');
+        $perPage = 10;
+        $posts = Post::paginate($perPage);
+        return view('all-post', ['posts' => $posts]);
     }
 
 }

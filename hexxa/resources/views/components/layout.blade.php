@@ -11,6 +11,42 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
+    <style>
+        .pagination-wrap {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pagination-wrap .pagination {
+            display: inline-block;
+            padding-left: 0;
+            margin: 20px 0;
+            border-radius: 0.25rem;
+        }
+
+        .pagination-wrap .pagination li {
+            display: inline;
+            margin-right: 5px;
+        }
+
+        .pagination-wrap .page-link {
+            position: relative;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin-left: -1px;
+            line-height: 1.25;
+            color: #3498db !important; /* Change this to your desired color */
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+
+        .pagination-wrap .page-item.active .page-link {
+            z-index: 3;
+            color: #fff !important;
+            background-color: #cc0c0c !important; /* Change this to your desired color */
+            border-color: #3498db !important; /* Change this to your desired color */
+        }
+        </style>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">

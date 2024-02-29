@@ -177,68 +177,28 @@
                                         aliquip ex ea commodo consequa aute irure dolor.</p>
                                 </div>
                             </div>
+
                             <div class="comment__wrap pb-45">
                                 <div class="comment__wrap-title">
                                     <h5>Comments</h5>
-                                </div>
-                                <div class="single__comment mb-35">
-                                    <div class="comments-avatar">
-                                        <img src="img/blog/comment/c_01.png" alt="">
-                                    </div>
-                                    <div class="comment-text">
-                                        <div class="avatar-name mb-15">
-                                            <h6>ALina Kelian</h6>
-                                            <span>19th May 2018</span>
-                                            <a href="#" class="comment-reply"><i class="fas fa-reply"></i>Reply</a>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                            ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                                    </div>
-                                </div>
-                                <div class="single__comment children mb-35">
-                                    <div class="comments-avatar">
-                                        <img src="img/blog/comment/c_02.png" alt="">
-                                    </div>
-                                    <div class="comment-text">
-                                        <div class="avatar-name mb-15">
-                                            <h6>Rlex Kelian <i class="fas fa-bookmark"></i></h6>
-                                            <span>19th May 2018</span>
-                                            <a href="#" class="comment-reply"><i class="fas fa-reply"></i>Reply</a>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                            ullamco laboris nisi ut
-                                            aliquip commodo.</p>
-                                    </div>
-                                </div>
-                                <div class="single__comment">
-                                    <div class="comments-avatar">
-                                        <img src="img/blog/comment/c_03.png" alt="">
-                                    </div>
-                                    <div class="comment-text">
-                                        <div class="avatar-name mb-15">
-                                            <h6>Roboto Alex</h6>
-                                            <span>21th May 2018</span>
-                                            <a href="#" class="comment-reply"><i class="fas fa-reply"></i>Reply</a>
-                                        </div>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                            ullamco laboris nisi ut
-                                            aliquip ex ea commodo consequat.</p>
-                                    </div>
+                                 @foreach($post->comments as $comment)
+                                <x-post-comment :comment="$comment"/>
+                            @endforeach
                                 </div>
                             </div>
+
+
                             <div id="comments" class="comments-area  mt-45">
                                 <div id="respond" class="comment-respond">
                                     <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#?p=2112#respond" style="display:none;">Cancel reply</a></small></h3>
                                     <form action="#" method="post" id="commentform" class="comment-form" novalidate="">
-                                        <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
-                                        <p class="comment-field"><i class="fas fa-user"></i><input id="author" placeholder="Your Name" name="author" type="text"></p>
-                                        <p class="comment-field"><i class="fas fa-envelope"></i><input id="email" placeholder="your-real-email@example.com" name="email" type="text"></p>
-                                        <p class="comment-field"><i class="fas fa-globe"></i><input id="url" name="url" placeholder="http://your-site-name.com" type="text"> </p>
-                                        <p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
-                                        <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="2112" id="comment_post_ID">
+
+                                        <p class="comment-form-comment">
+                                            <label for="comment">Comment</label>
+                                            <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required" placeholder="Comment..."></textarea></p>
+                                        <p class="form-submit">
+                                            <input name="submit" type="submit" id="submit" class="submit" value="Post Comment">
+                                            <input type="hidden" name="comment_post_ID" value="2112" id="comment_post_ID">
                                             <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                                         </p>
                                     </form>
