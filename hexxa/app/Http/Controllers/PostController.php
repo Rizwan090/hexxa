@@ -58,13 +58,9 @@ class PostController extends Controller
 
     public function login()
     {
-        return view('logi');
+        return view('login');
     }
 
-    public function registerr()
-    {
-        return view('registerr');
-    }
 
     public function blog_details(Post $post)
     {

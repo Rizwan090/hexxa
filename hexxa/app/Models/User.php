@@ -15,13 +15,13 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+//     * @var array<int, string>
+//     */
+////    protected $fillable = [
+////        'name', 'username', 'email', 'github_id', 'github_token', 'github_refresh_token', 'google_id',
+////    ];
+////
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -42,6 +42,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public static function create(array $attributes)
+    {
+    }
+
+
     public function post()
     {
         return $this->hasMany(Post::class);

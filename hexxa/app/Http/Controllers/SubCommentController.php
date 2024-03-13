@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
-class CommentController extends Controller
+class SubCommentController extends Controller
 {
-    public function store(Post $post)
+    public function store(Comment $comment)
     {
         request()->validate([
             'body' => 'required'
         ]);
 
-        $post->comments()->create([
+        $comment->subcomments()->create([
+            'comment_id' => $comment->id,
             'user_id' => 5,
             'body' => request('body')
         ]);

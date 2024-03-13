@@ -142,9 +142,13 @@
       <path value="$PROJECT_DIR$/hexxa/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/hexxa/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/hexxa/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/hexxa/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/hexxa/vendor/laravel/socialite" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1">
+    <option name="suggestChangeDefaultLanguageLevel" value="false" />
+  </component>
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>

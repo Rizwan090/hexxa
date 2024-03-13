@@ -1,9 +1,10 @@
 
 <x-layout>
+
+    <!-- offcanvas-end -->
     <main>
         <!-- breadcrumb-area -->
         <section class="breadcrumb-area d-flex align-items-center" style="background-image:url(/img/testimonial/test-bg.png)">
-
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-xl-12 col-lg-12">
@@ -40,7 +41,6 @@
                                         <li><i class="fal fa-eye"></i> 100 Views  </li>
                                         <li><i class="fal fa-comments"></i> 35 Comments</li>
                                         <li><i class="fal fa-calendar-alt"></i><time>{{$post->created_at->diffForHumans()}}</time></li>
-
                                     </ul>
                                 </div>
                                 <p>{{$post->body}}</p>
@@ -133,7 +133,6 @@
                                         <div class="related-post-wrap mb-30">
                                             <div class="post-thumb">
                                                 <img src="/img/blog/b_details03.jpg" alt="">
-
                                             </div>
                                             <div class="rp__content">
                                                 <h3><a href="#">A series of iOS 7 inspire
@@ -177,31 +176,32 @@
                                         aliquip ex ea commodo consequa aute irure dolor.</p>
                                 </div>
                             </div>
-
                             <div class="comment__wrap pb-45">
                                 <div class="comment__wrap-title">
                                     <h5>Comments</h5>
-                                 @foreach($post->comments as $comment)
-                                <x-post-comment :comment="$comment"/>
-                            @endforeach
                                 </div>
+
+
+
                             </div>
-
-
                             <div id="comments" class="comments-area  mt-45">
                                 <div id="respond" class="comment-respond">
                                     <h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="#?p=2112#respond" style="display:none;">Cancel reply</a></small></h3>
-                                    <form action="#" method="post" id="commentform" class="comment-form" novalidate="">
-
+                                    <form action="/posts/{{$post->slug}}/comments" method="POST" id="commentform" class="comment-form" novalidate="">
+                           @csrf
                                         <p class="comment-form-comment">
-                                            <label for="comment">Comment</label>
-                                            <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required" placeholder="Comment..."></textarea></p>
-                                        <p class="form-submit">
-                                            <input name="submit" type="submit" id="submit" class="submit" value="Post Comment">
-                                            <input type="hidden" name="comment_post_ID" value="2112" id="comment_post_ID">
+                                            <label for="comment">Comment</label> <textarea id="comment" name="body" cols="45" rows="8" maxlength="65525" required="required"></textarea></p>
+                                        <p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="2112" id="comment_post_ID">
                                             <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                                         </p>
                                     </form>
+
+
+
+                                        @foreach($post->comments as $comment)
+                                            <x-post-comment :comment="$comment" />
+                                        @endforeach
+
                                 </div>
                                 <!-- #respond -->
                             </div>

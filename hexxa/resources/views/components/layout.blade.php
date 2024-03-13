@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Hexaa Blog</title>
+    <title>codelab Blog</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -68,14 +69,15 @@
         <div class="container">
             <div class="second-menu">
                 <div class="row align-items-center">
-                    <div class="col-xl-2 col-lg-2">
+                    <div class="col-xl-2 col-lg-6">
                         <div class="logo">
-                            <a href="/"><img src="/img/logo/logo.png" alt="logo"></a>
+                            <a href="/"><img src="/img/logo/logo1.png" alt="logo"></a>
                         </div>
                     </div>
                     <div class="col-xl-8 col-lg-7">
 
                         <div class="main-menu text-right text-xl-right">
+
                             <nav id="mobile-menu">
                                 <ul>
                                     <li class="sub">
@@ -97,6 +99,20 @@
                                     </li>
                                     <li><a href="/shop">Shop</a></li>
                                     <li><a href="/contact-us">Contact Us</a></li>
+
+                                    @auth
+                                        <li><a href="/register">welcome</a></li>
+                                            <form action="/logout" method="POST">
+                                                @csrf
+                                                <button href="" class="btn btn-light">logout</button>
+                                            </form>
+
+                                    @else
+                                        <li><a href="/register">Register</a></li>
+                                        <li><a href="/login">Login</a></li>
+
+                                    @endauth
+
                                 </ul>
                             </nav>
                         </div>
@@ -107,7 +123,7 @@
                         <div class="header-social text-right">
                             <span>
 
-                                <a href="logi" title="Facebook"><i class="fa fa-user"></i></a>
+{{--                                <a href="/login" title="Facebook"><i class="fa fa-user"></i></a>--}}
                                 <a href="#" class="menu-tigger"><i class="fas fa-search"></i></a>
 
 
@@ -124,7 +140,9 @@
             </div>
         </div>
     </div>
+
 </header>
+<x-flash />
 <!-- header-end -->
 
 {{$slot}}
@@ -141,7 +159,7 @@
 
                     <div class="footer-widget mb-30">
                         <div class="f-widget-title">
-                            <img src="img/logo/logo.png" alt="img">
+                            <img src="img/logo/logo1.png" alt="img">
                         </div>
                         <div class="f-contact">
                             <p> Vestibulum accumsan purus tellus. Fusce luctus daferst luctus nibh, at finibus turpis
@@ -150,7 +168,7 @@
 
                                 <li><i class="icon fal fa-envelope"></i>
                                     <span>
-                                            <a href="mailto:info@thehexaa.com">info@thehexaa.com</a>
+                                            <a href="mailto:info@thecodelab.com">info@thecodelab.com</a>
                                        <br>
                                        <a href="mailto:help@example.com">help@example.com</a>
                                        </span>
@@ -262,4 +280,3 @@
 
 </html>
 
-</html>

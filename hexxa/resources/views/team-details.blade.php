@@ -12,7 +12,7 @@
         <div id="cssmenu2" class="menu-one-page-menu-container">
             <ul id="menu-one-page-menu-1" class="menu">
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#home"><span>+92 323 4044 700</span></a></li>
-                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#howitwork"><span>info@thehexaa.com</span></a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#howitwork"><span>info@thecodelab.com</span></a></li>
             </ul>
         </div>
     </div>

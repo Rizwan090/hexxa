@@ -131,6 +131,8 @@
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/laravel/socialite" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/league/oauth1-client" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
