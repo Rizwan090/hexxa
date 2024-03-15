@@ -6,42 +6,46 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
-use Illuminate\Support\Facades\Hash;
 
 class GoogleAuthController extends Controller
 {
-    public function redirect()
+    /**
+     * Redirect the user to the Google authentication page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function redirectToGoogle()
     {
-             return Socialite::driver('google')->redirect();
+        return Socialite::driver('google')->redirect();
     }
 
-    public function callbackgoogle()
+    /**
+     * Obtain the user information from Google.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleGoogleCallback()
     {
         try {
-            $google_user = Socialite::driver('google')->user();
-
-            $user = User::where('google_id' , $google_user->getId())->first();
-
-            if (!$user){
-                $new_user = User::create([
-                    'name' => $google_user->getName(),
-                    'email' => $google_user->getEmail(),
-                    'google_id' => $google_user->getId(),
-                ]);
-                Auth::login($new_user);
-
-                return redirect()->intended('/');
-            }
-            else{
-                Auth::login($user);
-
-                return redirect()->intended('/');
-            }
-
-
-        } catch (\Throwable $th){
-
-            dd('something is wrong' . $th->getMessage());
+            $googleUser = Socialite::driver('google')->stateless()->user();
+        } catch (\Exception $e) {
+            // Handle Socialite exception (e.g., user denied access)
+            return redirect('/')->with('success', 'Google authentication failed');
         }
+
+        // Find or create the user based on the Google email
+        $user = User::updateOrCreate(
+            ['email' => $googleUser->getEmail()],
+            [
+                'name' => $googleUser->getName(),
+                'google_id' => $googleUser->getId(),
+                'google_token' => $googleUser->token,
+            ]
+        );
+
+        // Log in the user
+        Auth::login($user, true); // Second parameter determines if "remember me" is checked
+
+        return redirect('/');
     }
 }

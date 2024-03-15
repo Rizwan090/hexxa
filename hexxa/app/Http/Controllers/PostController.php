@@ -73,7 +73,12 @@ class PostController extends Controller
     }
 
 
-
+public function model(Post $post)
+{
+    return view('model' , [
+        'post' => $post
+    ]);
+}
 
     public function index()
     {

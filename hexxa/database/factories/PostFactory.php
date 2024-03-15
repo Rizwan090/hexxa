@@ -24,6 +24,8 @@ class PostFactory extends Factory
             'excerpt' => $this->faker->sentence,
             'body' => $this->faker->paragraphs(12, true),
             'slug' => $this->faker->slug,
+            'price' => null,
+            'published_at' => now(),
 
         ];
     }
