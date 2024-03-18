@@ -56,9 +56,7 @@
                                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deser unt
                                     mollit anim id est
                                     laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant.</p>
-                                <div class="details__content-img">
-                                    <img src="img/blog/b_details01.jpg" alt="">
-                                </div>
+
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
                                     ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
                                     nisi ut aliquip

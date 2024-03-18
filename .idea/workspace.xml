@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f65d684e-5b76-412b-a1a1-ceeda87d24bd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/hexxa/config/stripe.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hexxa/resources/views/model.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hexxa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hexxa.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/app/Http/Controllers/GoogleAuthController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hexxa/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/database/factories/PostFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/database/factories/PostFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/database/migrations/2024_02_27_061947_create_posts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/database/migrations/2024_02_27_061947_create_posts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexxa/app/Http/Controllers/StripeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/app/Http/Controllers/StripeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexxa/resources/views/blog-details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/resources/views/blog-details.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hexxa/resources/views/components/feature-posts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/resources/views/components/feature-posts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/resources/views/components/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/resources/views/components/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/resources/views/register/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/resources/views/register/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/resources/views/sessions/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/resources/views/sessions/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexxa/resources/views/model.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/resources/views/model.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hexxa/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,19 +169,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\hexxa\hexxa\resources\views" />
@@ -236,11 +227,27 @@
       <workItem from="1710303779632" duration="13488000" />
       <workItem from="1710344360015" duration="2770000" />
       <workItem from="1710389977245" duration="19566000" />
-      <workItem from="1710476445025" duration="20032000" />
+      <workItem from="1710476445025" duration="20284000" />
+      <workItem from="1710566783263" duration="12757000" />
+      <workItem from="1710587853204" duration="1050000" />
+      <workItem from="1710609472030" duration="5995000" />
+      <workItem from="1710735639489" duration="2999000" />
+      <workItem from="1710738799796" duration="14167000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

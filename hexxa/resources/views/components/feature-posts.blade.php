@@ -7,7 +7,9 @@
                         <div class="img">
                             @if($post->price)
                                 <!-- Display price if post has a price -->
-                                <div class="cat">{{$post->price}}$</div>
+                                <div class="cat">Lock {{$post->price}}$</div>
+                            @else
+                                <div class="cat">Free</div>
                             @endif
                             <img src="img/blog/lifestyle/lf-1.jpg" alt="icon01">
                         </div>
@@ -15,7 +17,8 @@
                             <h5>
                                 @if($post->price)
                                     <!-- Open modal if post has a price -->
-                                    <a href="{{route('model')}}">{{ $post->title }}</a>
+                                    <a href="{{ route('model', ['post' => $post->id]) }}">{{ $post->title }}</a>
+
                                 @else
                                     <!-- Directly link to post if it doesn't have a price -->
                                     <a href="{{ route('post-detail', ['post' => $post->slug]) }}">{{ $post->title }}</a>

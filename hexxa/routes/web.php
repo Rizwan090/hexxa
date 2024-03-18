@@ -49,7 +49,8 @@ Route::prefix('')->group(function () {
 
 });
 
-Route::get('model', [PostController::class, 'model'])->name('model');
+Route::get('/model/{post}', [PostController::class, 'model'])->name('model');
+
 
 Route::get('register' , [RegisterController::class , 'create'])->middleware('guest');
 Route::post('register' , [RegisterController::class , 'store'])->middleware('guest');
