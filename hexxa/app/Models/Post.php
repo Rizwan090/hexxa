@@ -22,5 +22,12 @@ class Post extends Model
     {
          return$this->belongsTo(Category::class);
     }
+    public function unlockedByUsers()
+    {
+        return $this->belongsToMany(User::class, 'user_post_purchases')->withTimestamps();
+    }
+
+
 
 }
+

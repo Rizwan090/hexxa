@@ -15,14 +15,8 @@
                         </div>
                         <div class="text">
                             <h5>
-                                @if($post->price)
-                                    <!-- Open modal if post has a price -->
-                                    <a href="{{ route('model', ['post' => $post->id]) }}">{{ $post->title }}</a>
-
-                                @else
-                                    <!-- Directly link to post if it doesn't have a price -->
-                                    <a href="{{ route('post-detail', ['post' => $post->slug]) }}">{{ $post->title }}</a>
-                                @endif
+                                <!-- Directly link to post -->
+                                <a href="/posts/{{$post->slug}}">{{ $post->title }}</a>
                             </h5>
                             <div class="post-tags mt-20">
                                 <ul>

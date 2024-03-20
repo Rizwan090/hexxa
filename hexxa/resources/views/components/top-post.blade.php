@@ -33,6 +33,7 @@
                             </div>
                             <div class="text">
                                 <h5><a href="blog-details.html">{{$post->title}}</a></h5>
+
                                 <p>{{$post->excerpt}}</p>
                                 <div class="post-tags mt-20">
                                     <ul>

@@ -136,6 +136,8 @@
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/laravel/socialite" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/league/oauth1-client" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/stripe/stripe-php" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/paypal/paypal-checkout-sdk" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/paypal/paypalhttp" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

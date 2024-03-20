@@ -10,7 +10,7 @@
                 <div class="col-12">
                     <div class="mb-5">
                         <h2 class="display-5 fw-bold text-center">Log In</h2>
-                        <p class="text-center m-0">Don't have an account? <a href="/login">Sign up</a></p>
+                        <p class="text-center m-0">Don't have an account? <a href="/register">Sign up</a></p>
                     </div>
                 </div>
             </div>

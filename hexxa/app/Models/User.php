@@ -52,4 +52,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+
+    public function unlockedPosts()
+    {
+        return $this->belongsToMany(Post::class, 'user_post_purchases')->withTimestamps();
+    }
+
+    public function hasUnlockedPost($postId): bool
+    {
+        return $this->unlockedPosts->contains('id', $postId);
+    }
+
 }

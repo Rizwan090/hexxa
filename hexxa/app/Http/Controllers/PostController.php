@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\category;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
+
 class PostController extends Controller
 
 {
@@ -64,16 +66,31 @@ class PostController extends Controller
 
     public function blog_details(Post $post)
     {
-        // Eager load comments with the post
-        $post = $post->load('comments');
+        // Step 1: Check if the user is logged in
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
 
-        return view('blog-details', [
-            'post' => $post
-        ]);
+        $user = Auth::user();
+
+        // Step 2: Check if the post price is null
+        if (is_null($post->price)) {
+            return view('blog-details', ['post' => $post]);
+        }
+
+        // Step 3: Check if the post is unlocked by the specific user
+        if ($user->hasUnlockedPost($post->id)) {
+            // If post is already unlocked, redirect to post detail page
+            return view('blog-details', ['post' => $post]);
+        }
+
+        // Redirect to payment page
+        return redirect()->route('payment-page', $post->slug);
     }
 
 
-public function model(Post $post)
+
+    public function model(Post $post)
 {
 
     return view('model' , [

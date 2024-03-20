@@ -4,17 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Stripe\Checkout\Session;
+use Stripe\Stripe;
+
 
 class StripeController extends Controller
 {
-    public function session(Request $request)
+
+
+    public function session(Request $request ,Post $post)
     {
+        // Retrieve price and post slug from the request
         $price = $request->input('price') * 100;
-        $postSlug = $request->input('post_slug');
 
-        \Stripe\Stripe::setApiKey(config('stripe.sk'));
+        // Save post ID in the session
+        \Illuminate\Support\Facades\Session::put('post_id', $post->id);
 
-        $session = \Stripe\Checkout\Session::create([
+        // Create Stripe session
+        Stripe::setApiKey(config('stripe.sk'));
+
+        $session = Session::create([
             'line_items'  => [
                 [
                     'price_data' => [
@@ -28,18 +38,28 @@ class StripeController extends Controller
                 ],
             ],
             'mode'        => 'payment',
-            'success_url' => route('success', ['postSlug' => $postSlug]),
+            'success_url' => route('success-stripe'),
             'cancel_url'  => route('home'),
         ]);
 
+        // Redirect user to Stripe Checkout
         return redirect()->away($session->url);
     }
 
+
     public function success(Request $request)
     {
-        $postSlug = $request->input('postSlug');
-        $post = Post::where('slug', $postSlug)->firstOrFail();
+        // Retrieve the post ID from the session
+        $postId = \Illuminate\Support\Facades\Session::get('post_id');
 
-        return view('blog-details', compact('post'));
+        // Find the post by ID
+        $post = Post::find($postId);
+
+        // Save the user ID and post ID in the pivot table
+        $user = Auth::user();
+        $user->unlockedPosts()->attach($postId);
+
+        // Redirect the user to the post details page
+        return redirect()->route('post-detail', ['post' => $post->slug]);
     }
 }

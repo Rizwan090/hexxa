@@ -3,6 +3,7 @@
 use App\Http\Controllers\GitHubAuthController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\StripeController;
+use App\Http\Controllers\PayPalController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
@@ -49,13 +50,15 @@ Route::prefix('')->group(function () {
 
 });
 
-Route::get('/model/{post}', [PostController::class, 'model'])->name('model');
+Route::get('/posts/payments/{post:slug}', [PostController::class, 'model'])->name('payment-page');
+
+Route::get('success-stripe' , [StripeController::class, 'success'])->name('success-stripe');
 
 
 Route::get('register' , [RegisterController::class , 'create'])->middleware('guest');
 Route::post('register' , [RegisterController::class , 'store'])->middleware('guest');
 
-Route::get('login' , [SessionsController::class , 'create'])->middleware('guest');
+Route::get('login' , [SessionsController::class , 'create'])->middleware('guest')->name('login');
 Route::post('login' , [SessionsController::class , 'store'])->middleware('guest');
 
 Route::post('logout' , [SessionsController::class , 'destroy'])->middleware('auth');
@@ -71,6 +74,10 @@ Route::get('/auth/callback', [GitHubAuthController::class, 'handleGitHubCallback
 Route::get('/auth/google/redirect', [GoogleAuthController::class, 'redirectToGoogle']);
 Route::get('/auth/google/call-back', [GoogleAuthController::class, 'handleGoogleCallback']);
 
-//Route::get('/', [StripeController::class, 'checkout'])->name('checkout');
+
 Route::post('/session', [StripeController::class , 'session'])->name('session');
 Route::get('/success', [StripeController::class , 'success'])->name('success');
+
+
+Route::post('/paypal/session', [PayPalController::class, 'session'])->name('paypal.session');
+Route::get('/paypal/success', [PayPalController::class, 'success'])->name('paypal.success');

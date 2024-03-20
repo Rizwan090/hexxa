@@ -145,6 +145,8 @@
       <path value="$PROJECT_DIR$/hexxa/vendor/league/oauth1-client" />
       <path value="$PROJECT_DIR$/hexxa/vendor/laravel/socialite" />
       <path value="$PROJECT_DIR$/hexxa/vendor/stripe/stripe-php" />
+      <path value="$PROJECT_DIR$/hexxa/vendor/paypal/paypal-checkout-sdk" />
+      <path value="$PROJECT_DIR$/hexxa/vendor/paypal/paypalhttp" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1">
