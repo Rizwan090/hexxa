@@ -4,6 +4,7 @@ use App\Http\Controllers\GitHubAuthController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\VerificationController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
@@ -45,9 +46,6 @@ Route::prefix('')->group(function () {
 
     Route::get('all-post/{page?}', [PostController::class, 'index'])->where('page', '[0-9]+')
         ->name('posts.index');
-
-
-
 });
 
 Route::get('/posts/payments/{post:slug}', [PostController::class, 'model'])->name('payment-page');
@@ -76,8 +74,15 @@ Route::get('/auth/google/call-back', [GoogleAuthController::class, 'handleGoogle
 
 
 Route::post('/session', [StripeController::class , 'session'])->name('session');
-Route::get('/success', [StripeController::class , 'success'])->name('success');
+Route::get('/success-stripe', [StripeController::class , 'successStripe'])->name('success-stripe');
 
 
-Route::post('/paypal/session', [PayPalController::class, 'session'])->name('paypal.session');
-Route::get('/paypal/success', [PayPalController::class, 'success'])->name('paypal.success');
+Route::post('paypal' , [PayPalController::class , 'paypal'])->name('paypal');
+Route::get('success' , [PayPalController::class , 'success'])->name('success');
+Route::get('cancel' , [PayPalController::class , 'cancel'])->name('cancel');
+
+
+Route::get('2FA', [PostController::class, 'twoFA'])->name('twoFA');
+Route::get('qrcode', [PostController::class, 'qrcode'])->name('qrcode');
+Route::post('/verify-two-factor', [VerificationController::class, 'verifyTwoFactor'])->name('verifyTwoFactor');
+

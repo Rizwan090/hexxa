@@ -2,62 +2,73 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use PayPalCheckoutSdk\Core\PayPalHttpClient;
-use PayPalCheckoutSdk\Core\SandboxEnvironment;
-use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
+use Illuminate\Support\Facades\Session;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class PayPalController extends Controller
 {
-    public function session(Request $request)
+    public function paypal(Request $request)
     {
-        // Retrieve price and product name from the request
-        $price = $request->input('price');
-        $productName = $request->input('productname');
-
-        // Set up PayPal environment
-        $clientId = config('services.paypal.client_id');
-        $clientSecret = config('services.paypal.client_secret');
-        $environment = new SandboxEnvironment($clientId, $clientSecret);
-        $client = new PayPalHttpClient($environment);
-
-        // Create PayPal order
-        $request = new OrdersCreateRequest();
-        $request->prefer('return=representation');
-        $request->body = [
+      $provider= new paypalClient;
+        $provider->setApiCredentials(config('paypal'));
+       $paypalToken =  $provider->getAccessToken();
+        $response = $provider->createOrder([
             "intent" => "CAPTURE",
-            "purchase_units" => [
-                [
-                    "amount" => [
-                        "currency_code" => "USD",
-                        "value" => $price
-                    ],
-                    "description" => $productName
-                ]
-            ],
             "application_context" => [
-                "cancel_url" => route('home'), // Redirect URL on cancel
-                "return_url" => route('paypal.success') // Redirect URL on success
-            ]
-        ];
-
-        try {
-            $response = $client->execute($request);
-            foreach ($response->result->links as $link) {
-                if ($link->rel == 'approve') {
-                    return redirect()->away($link->href);
-                }
-            }
-        } catch (\Exception $e) {
-            // Handle error
-            return redirect()->route('home')->with('error', 'Payment failed.');
+                "return_url" => route('success'),
+                "cancel_url" => route('cancel')
+            ],
+    "purchase_units" => [
+      [
+          "amount" => [
+          "currency_code" => "USD",
+          "value" => $request->price,
+        ]
+      ]
+    ]
+        ]);
+//dd($response);
+        if(isset($response['id']) && $response['id'] !=null){
+          foreach ($response['links'] as $link){
+              if($link['rel'] === 'approve'){
+                  return redirect()->away($link['href']);
+              }
+          }
+        } else {
+            return redirect()->route('home');
         }
     }
 
+
     public function success(Request $request)
     {
-        // Handle payment success logic
-        return 'success';
+        $provider = new paypalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $paypalToken =  $provider->getAccessToken();
+        $response = $provider->capturePaymentOrder($request->token);
+
+        // Retrieve the post ID from the session
+        $postId = \Illuminate\Support\Facades\Session::get('post_id');
+
+        // Find the post by ID
+        $post = Post::find($postId);
+
+        // Check if the post exists
+        if (!$post) {
+            return redirect()->route('home')->with('error', 'Post not found.');
+        }
+
+        // Save the user ID and post ID in the pivot table
+        $user = Auth::user();
+        $user->unlockedPosts()->attach($postId);
+
+        // Redirect the user to the post details page
+        return redirect()->route('post-detail', ['post' => $post->slug]);
     }
+
+
+
 }

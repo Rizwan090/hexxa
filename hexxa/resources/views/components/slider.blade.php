@@ -13,7 +13,14 @@
                             <div class="text">
                                 <div class="post-tags">
                                     <ul>
-                                        <li><a href="#" class="c-btn">TRAVEL</a></li>
+                                        @if($post->price)
+                                            <!-- Display price if post has a price -->
+                                            <div class="cat">Lock {{$post->price}}$</div>
+                                        @else
+                                            <li><a href="#" class="c-btn">Free</a></li>
+
+                                        @endif
+
                                         <li><a href="#"><span class="icon"><img src="img/icon/ps-1.png" alt="courses-img1"></span> Trending</a></li>
                                     </ul>
                                 </div>

@@ -105,4 +105,14 @@ class PostController extends Controller
         return view('all-post', ['posts' => $posts]);
     }
 
+
+    public function twoFA()
+    {
+        return view('2FA');
+    }
+
+    public function qrcode()
+    {
+        return view('qrcode');
+    }
 }

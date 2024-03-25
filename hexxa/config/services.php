@@ -43,9 +43,5 @@ return [
         'redirect' => env('http://127.0.0.1:8000/auth/google/call-back'),
     ],
 
-    'paypal' => [
-        'client_id' => env('PAYPAL_CLIENT_ID'),
-        'secret' => env('PAYPAL_SECRET'),
-    ],
 
 ];

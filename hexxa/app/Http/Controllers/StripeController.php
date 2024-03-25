@@ -47,7 +47,7 @@ class StripeController extends Controller
     }
 
 
-    public function success(Request $request)
+    public function successStripe(Request $request)
     {
         // Retrieve the post ID from the session
         $postId = \Illuminate\Support\Facades\Session::get('post_id');

@@ -28,11 +28,20 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="tps-box wow fadeInUp animated hover-zoomin mb-30"  data-delay=".4s">
                             <div class="img ">
-                                <div class="cat">LIFE STYLE</div>
+                                @if($post->price)
+                                    <!-- Display price if post has a price -->
+                                    <div class="cat">Lock {{$post->price}}$</div>
+                                @else
+                                    <div class="cat">Free</div>
+                                @endif
+
                                 <img src="img/blog/lifestyle/lf-4.jpg" alt="icon01">
                             </div>
                             <div class="text">
-                                <h5><a href="blog-details.html">{{$post->title}}</a></h5>
+                                <h5>
+                                    <!-- Directly link to post -->
+                                    <a href="/posts/{{$post->slug}}">{{ $post->title }}</a>
+                                </h5>
 
                                 <p>{{$post->excerpt}}</p>
                                 <div class="post-tags mt-20">

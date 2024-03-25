@@ -47,6 +47,9 @@
             background-color: #cc0c0c !important; /* Change this to your desired color */
             border-color: #3498db !important; /* Change this to your desired color */
         }
+        .dropdown-menu .dropdown-item {
+            cursor: pointer;
+        }
         </style>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
@@ -102,13 +105,9 @@
 
                                     @auth
                                         <li><a href="/register">welcome</a></li>
-                                            <form action="/logout" method="POST">
-                                                @csrf
-                                                <button href="" class="btn btn-light">logout</button>
-                                            </form>
 
                                     @else
-                                        <li><a href="/register">Register</a></li>
+{{--                                        <li><a href="/register">Register</a></li>--}}
                                         <li><a href="/login">Login</a></li>
 
                                     @endauth
@@ -123,9 +122,28 @@
                         <div class="header-social text-right">
                             <span>
 
-{{--                                <a href="/login" title="Facebook"><i class="fa fa-user"></i></a>--}}
-                                <a href="#" class="menu-tigger"><i class="fas fa-search"></i></a>
+                      <span>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-user"></i>
+                </a>
+                @auth()
+                <ul class="dropdown-menu" aria-labelledby="">
+ <li>
+        <a class="dropdown-item" href="{{ route('twoFA') }}">2 FA</a>
+    </li>
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <button href="" class="btn btn-dark">logout</button>
+                    </form>
 
+                </ul>
+                @else
+                    <a href="#" class="menu-tigger"><i class="fas fa-search"></i></a>
+
+                @endauth
+            </div>
+        </span>
 
                                </span>
                             <!--  /social media icon redux -->
@@ -291,6 +309,8 @@
     }
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

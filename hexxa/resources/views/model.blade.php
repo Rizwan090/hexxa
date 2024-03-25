@@ -58,10 +58,11 @@
                             <button type="submit" id="checkout-live-button" class="btn ss-btn">Stripe payment</button>
                         </form>
 
-                        <form action="{{ route('paypal.session') }}" method="POST">
+
+                        <form action="{{ route('paypal') }}" method="POST">
                             @csrf
-                            <input type="hidden" name="price" value="{{ $post->price }}">
-                            <input type="hidden" name="productname" value="{{ $post->title }}">
+                            <input type="hidden" name="price" value="{{$post->price}}">
+                            <input type="hidden" name="product_name" value="code">
                             <input type="hidden" name="post_slug" value="{{ $post->slug }}">
                             <!-- PayPal payment button -->
                             <button type="submit" class="btn ss-btn">PayPal payment</button>
