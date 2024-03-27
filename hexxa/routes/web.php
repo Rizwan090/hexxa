@@ -4,6 +4,8 @@ use App\Http\Controllers\GitHubAuthController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\TwoFactorAuthenticationConfirmationController;
+use App\Http\Controllers\TwoFactorAuthenticationController;
 use App\Http\Controllers\VerificationController;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -85,4 +87,15 @@ Route::get('cancel' , [PayPalController::class , 'cancel'])->name('cancel');
 Route::get('2FA', [PostController::class, 'twoFA'])->name('twoFA');
 Route::get('qrcode', [PostController::class, 'qrcode'])->name('qrcode');
 Route::post('/verify-two-factor', [VerificationController::class, 'verifyTwoFactor'])->name('verifyTwoFactor');
+
+
+
+// Route for showing the two-factor authentication confirmation form
+Route::get('show', [TwoFactorAuthenticationConfirmationController::class, 'show'])
+    ->name('show');
+
+// Route for confirming two-factor authentication
+Route::post('/account/two-factor-authentication/confirm', [TwoFactorAuthenticationConfirmationController::class, 'store'])
+    ->name('account.two-factor-authentication.confirm.store');
+
 

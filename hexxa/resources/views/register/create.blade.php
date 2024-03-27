@@ -1,5 +1,7 @@
 <x-layout>
 
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/logins/login-12/assets/css/login-12.css">
 
     <!-- Login 12 - Bootstrap Brain Component -->
     <section class="py-3 py-md-5 py-xl-8">

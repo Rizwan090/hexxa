@@ -15,7 +15,7 @@ class TwoFactorAuthenticationController extends Controller
         $user = $request->user();
 
         if ($user->hasEnabledTwoFactorAuthentication()) {
-            return back()->with('status', 'Two-factor authentication is already enabled');
+            return back()->with('success', 'Two-factor authentication is already enabled');
         }
 
         $user->enableTwoFactorAuthentication();

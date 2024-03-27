@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f65d684e-5b76-412b-a1a1-ceeda87d24bd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/hexxa/resources/views/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/hexxa.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hexxa.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/app/Http/Controllers/PayPalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/app/Http/Controllers/PayPalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/app/Http/Controllers/StripeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/app/Http/Controllers/StripeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexxa/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexxa/app/Http/Controllers/TwoFactorAuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/app/Http/Controllers/TwoFactorAuthenticationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexxa/app/Http/Controllers/VerificationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/app/Http/Controllers/VerificationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexxa/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hexxa/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hexxa/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hexxa/resources/views/model.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/resources/views/model.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexxa/resources/views/QRcode.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/resources/views/QRcode.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexxa/resources/views/components/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/resources/views/components/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hexxa/resources/views/register/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/resources/views/register/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hexxa/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/hexxa/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -165,6 +169,12 @@
       <path value="$PROJECT_DIR$/hexxa/vendor/paypal/paypal-checkout-sdk" />
       <path value="$PROJECT_DIR$/hexxa/vendor/paypal/paypalhttp" />
       <path value="$PROJECT_DIR$/hexxa/vendor/srmklive/paypal" />
+      <path value="$PROJECT_DIR$/hexxa/vendor/emargareten/two-factor-laravel" />
+      <path value="$PROJECT_DIR$/hexxa/vendor/dasprid/enum" />
+      <path value="$PROJECT_DIR$/hexxa/vendor/pragmarx/google2fa" />
+      <path value="$PROJECT_DIR$/hexxa/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/hexxa/vendor/bacon/bacon-qr-code" />
+      <path value="$PROJECT_DIR$/hexxa/vendor/milon/barcode" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -246,6 +256,11 @@
       <workItem from="1710994964816" duration="14148000" />
       <workItem from="1711034222283" duration="1852000" />
       <workItem from="1711081350441" duration="16983000" />
+      <workItem from="1711340324221" duration="27548000" />
+      <workItem from="1711426534304" duration="15445000" />
+      <workItem from="1711469529155" duration="3027000" />
+      <workItem from="1711513267961" duration="13514000" />
+      <workItem from="1711542800744" duration="7005000" />
     </task>
     <servers />
   </component>

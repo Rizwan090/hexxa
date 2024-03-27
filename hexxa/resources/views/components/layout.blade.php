@@ -124,13 +124,13 @@
 
                       <span>
             <div class="dropdown">
-                <a href="#" class="dropdown-toggle" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <a href="#" class="" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-user"></i>
                 </a>
                 @auth()
                 <ul class="dropdown-menu" aria-labelledby="">
  <li>
-        <a class="dropdown-item" href="{{ route('twoFA') }}">2 FA</a>
+        <a class="dropdown-item " href="{{ route('twoFA') }}">2 FA</a>
     </li>
                     <form action="/logout" method="POST">
                         @csrf

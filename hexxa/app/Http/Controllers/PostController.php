@@ -115,4 +115,9 @@ class PostController extends Controller
     {
         return view('qrcode');
     }
+
+public function showe()
+{
+  return view('account.two-factor-authentication.confirm.show');
+}
 }

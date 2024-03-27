@@ -15,11 +15,14 @@ class VerificationController extends Controller
         ]);
 
 
+
+
         $user = User::where('email', $request->email)->first();
 
         if ($user) {
 
-            return redirect()->route('qrcode');
+            return redirect()->route('show');
+
         } else {
 
             return back()->with('error', 'Invalid email address.');

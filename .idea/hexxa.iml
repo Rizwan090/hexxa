@@ -139,6 +139,12 @@
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/paypal/paypal-checkout-sdk" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/paypal/paypalhttp" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/srmklive/paypal" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/bacon/bacon-qr-code" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/dasprid/enum" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/emargareten/two-factor-laravel" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/milon/barcode" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/pragmarx/google2fa" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

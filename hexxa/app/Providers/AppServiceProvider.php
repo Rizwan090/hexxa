@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
 
@@ -30,6 +31,10 @@ class AppServiceProvider extends ServiceProvider
 
         Validator::replacer('valid_email_with_dot', function ($message, $attribute, $rule, $parameters) {
             return str_replace(':attribute', $attribute, 'The :attribute must be a valid email address with a dot.');
+        });
+
+        View::composer('your-view-name', function ($view) {
+            // Perform actions here just before the view is rendered
         });
     }
 }

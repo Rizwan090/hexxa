@@ -1,7 +1,7 @@
 <x-layout>
 
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-6 mb-5 mt-50">
             <div class="card">
                 <div class="card-header">Confirm Two-Factor Authentication Setup</div>
                 <div class="card-body">
