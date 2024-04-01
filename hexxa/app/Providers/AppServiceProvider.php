@@ -33,8 +33,5 @@ class AppServiceProvider extends ServiceProvider
             return str_replace(':attribute', $attribute, 'The :attribute must be a valid email address with a dot.');
         });
 
-        View::composer('your-view-name', function ($view) {
-            // Perform actions here just before the view is rendered
-        });
     }
 }

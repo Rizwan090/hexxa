@@ -6,18 +6,20 @@
       <sourceFolder url="file://$MODULE_DIR$/hexxa/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/hexxa/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
       <sourceFolder url="file://$MODULE_DIR$/hexxa/tests" isTestSource="true" packagePrefix="Tests\" />
-      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/bacon/bacon-qr-code" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/brianium/paratest" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/carbonphp/carbon-doctrine-types" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/clue/stream-filter" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/dasprid/enum" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/dflydev/dot-access-data" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/doctrine/deprecations" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/dragonmantank/cron-expression" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/emargareten/two-factor-laravel" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/fakerphp/faker" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/fidry/cpu-core-counter" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/filp/whoops" />
@@ -35,12 +37,16 @@
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/laravel/sail" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/laravel/sanctum" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/laravel/serializable-closure" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/laravel/socialite" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/league/commonmark" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/league/config" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/league/flysystem-local" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/league/oauth1-client" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/mailgun/mailgun-php" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/milon/barcode" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/monolog/monolog" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/myclabs/deep-copy" />
@@ -50,12 +56,21 @@
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/nunomaduro/collision" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/nunomaduro/termwind" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/paypal/paypal-checkout-sdk" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/paypal/paypalhttp" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/pestphp/pest" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/pestphp/pest-plugin" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/pestphp/pest-plugin-arch" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/pestphp/pest-plugin-laravel" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/php-http/client-common" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/php-http/discovery" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/php-http/httplug" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/php-http/message" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/php-http/multipart-stream-builder" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/php-http/promise" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/phpdocumentor/type-resolver" />
@@ -67,6 +82,7 @@
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/phpunit/php-text-template" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/phpunit/php-timer" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/pragmarx/google2fa" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/psr/clock" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/psr/event-dispatcher" />
@@ -98,6 +114,8 @@
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/spatie/flare-client-php" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/spatie/ignition" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/spatie/laravel-ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/srmklive/paypal" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/stripe/stripe-php" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/css-selector" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/deprecation-contracts" />
@@ -105,10 +123,13 @@
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/event-dispatcher" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/event-dispatcher-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/http-client-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/http-kernel" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/mailer" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/options-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/polyfill-ctype" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/polyfill-intl-grapheme" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/polyfill-intl-idn" />
@@ -133,18 +154,7 @@
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/webmozart/assert" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/laravel/socialite" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/league/oauth1-client" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/stripe/stripe-php" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/paypal/paypal-checkout-sdk" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/paypal/paypalhttp" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/srmklive/paypal" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/bacon/bacon-qr-code" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/dasprid/enum" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/emargareten/two-factor-laravel" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/milon/barcode" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/paragonie/constant_time_encoding" />
-      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/pragmarx/google2fa" />
+      <excludeFolder url="file://$MODULE_DIR$/hexxa/vendor/symfony/mailgun-mailer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

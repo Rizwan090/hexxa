@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\category;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
@@ -18,10 +19,10 @@ class PostController extends Controller
     }
 
 
-    public function show(Category $category)
-    {
-        return view('posts.show', ['category' => $category]);
-    }
+//    public function show(Category $category)
+//    {
+//        return view('posts.show', ['category' => $category]);
+//    }
 
 
     public function travel()
@@ -63,7 +64,6 @@ class PostController extends Controller
         return view('login');
     }
 
-
     public function blog_details(Post $post)
     {
         // Step 1: Check if the user is logged in
@@ -71,14 +71,20 @@ class PostController extends Controller
             return redirect()->route('login');
         }
 
+        // Step 2: Check if the post exists
+        if (!$post) {
+            // Handle the case where the post doesn't exist
+            abort(404); // or any other appropriate action
+        }
+
         $user = Auth::user();
 
-        // Step 2: Check if the post price is null
+        // Step 3: Check if the post price is null
         if (is_null($post->price)) {
             return view('blog-details', ['post' => $post]);
         }
 
-        // Step 3: Check if the post is unlocked by the specific user
+        // Step 4: Check if the post is unlocked by the specific user
         if ($user->hasUnlockedPost($post->id)) {
             // If post is already unlocked, redirect to post detail page
             return view('blog-details', ['post' => $post]);
@@ -108,7 +114,9 @@ class PostController extends Controller
 
     public function twoFA()
     {
-        return view('2FA');
+        $authenticatedUser = Auth::user();
+
+        return view('2FA', compact('authenticatedUser'));
     }
 
     public function qrcode()
@@ -116,8 +124,8 @@ class PostController extends Controller
         return view('qrcode');
     }
 
-public function showe()
+public function show()
 {
-  return view('account.two-factor-authentication.confirm.show');
+  return view('show');
 }
 }

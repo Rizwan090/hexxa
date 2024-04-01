@@ -102,12 +102,12 @@
 
                     </div>
                     <div class="col-lg-8 col-md-12">
-
-                        <form action="# codelab/mail.php" method="post" class="contact-form ">
+                        <form action="{{ route('submitForm') }}" method="POST" class="contact-form">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="contact-field p-relative c-name mb-20">
-                                        <input type="text" id="firstn" name="firstn" placeholder="First Name" required>
+                                        <input type="text" id="firstn" name="name" placeholder="First Name" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
@@ -116,35 +116,35 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <div class="contact-field p-relative c-subject mb-20">
-                                        <input type="text" id="email" name="email" placeholder="Eamil" required>
+                                    <div class="contact-field p-relative c-email mb-20">
+                                        <input type="email" id="email" name="email" placeholder="Email" required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
-                                    <div class="contact-field p-relative c-subject mb-20">
+                                    <div class="contact-field p-relative c-email mb-20">
                                         <input type="text" id="phone" name="phone" placeholder="Phone No." required>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="contact-field p-relative c-option mb-20">
-                                        <select name="services" id="sr">
+                                        <select name="services" id="services">
                                             <option value="sports-massage">Sports Massage</option>
-                                            <option value="hot-stone-message">Hot Stone Message</option>
-                                            <option value="facil-therophy">Facil & Therophy</option>
+                                            <option value="hot-stone-massage">Hot Stone Massage</option>
+                                            <option value="facial-therapy">Facial & Therapy</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="contact-field p-relative c-message mb-45">
-                                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Write comments"></textarea>
+                                        <textarea name="message" id="message" cols="30" rows="10" placeholder="Write comments" required></textarea>
                                     </div>
                                     <div class="slider-btn">
-                                        <button class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Submint Now</button>
+                                        <button type="submit" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">Submit Now</button>
                                     </div>
                                 </div>
                             </div>
-
                         </form>
+
 
                     </div>
 

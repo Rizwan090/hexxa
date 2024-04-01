@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\View\View;
 
 class TwoFactorAuthenticationConfirmationController extends Controller
@@ -11,19 +12,19 @@ class TwoFactorAuthenticationConfirmationController extends Controller
     /**
      * Get the two-factor authentication confirmation view.
      */
-    public function show(Request $request): View|RedirectResponse
+    public function qshow(Request $request): View|RedirectResponse
     {
         $user = $request->user();
 
         if ($user->hasEnabledTwoFactorAuthentication()) {
-            return back()->with('status', 'Two-factor authentication is already enabled');
+            return back()->with('success', 'Two-factor authentication is already enabled');
         }
 
         if (! $user->two_factor_secret) {
-            return back()->with('status', 'Two-factor authentication is not enabled');
+            return back()->with('success', 'Two-factor authentication is not enabled');
         }
 
-        return view('show', [
+        return view('2fa.show', [
             'qrCodeSvg' => $user->twoFactorQrCodeSvg(),
             'setupKey' => $user->two_factor_secret,
         ]);
@@ -41,7 +42,17 @@ class TwoFactorAuthenticationConfirmationController extends Controller
         $request->user()->confirmTwoFactorAuthentication($request->code);
 
         return redirect()
-            ->route('account.two-factor-authentication.recovery-codes.index')
-            ->with('status', 'Two-factor authentication successfully confirmed');
+            ->route('home')
+            ->with('success', 'Two-factor authentication successfully confirmed');
+    }
+
+    /**
+     * Disable two-factor authentication for the user.
+     */
+    public function destroy(Request $request): RedirectResponse
+    {
+        $request->user()->disableTwoFactorAuthentication();
+
+        return back()->with('success', 'Two-factor authentication disabled successfully');
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\GitHubAuthController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\StripeController;
@@ -52,8 +54,6 @@ Route::prefix('')->group(function () {
 
 Route::get('/posts/payments/{post:slug}', [PostController::class, 'model'])->name('payment-page');
 
-Route::get('success-stripe' , [StripeController::class, 'success'])->name('success-stripe');
-
 
 Route::get('register' , [RegisterController::class , 'create'])->middleware('guest');
 Route::post('register' , [RegisterController::class , 'store'])->middleware('guest');
@@ -79,23 +79,30 @@ Route::post('/session', [StripeController::class , 'session'])->name('session');
 Route::get('/success-stripe', [StripeController::class , 'successStripe'])->name('success-stripe');
 
 
-Route::post('paypal' , [PayPalController::class , 'paypal'])->name('paypal');
-Route::get('success' , [PayPalController::class , 'success'])->name('success');
-Route::get('cancel' , [PayPalController::class , 'cancel'])->name('cancel');
+    Route::post('paypal' , [PayPalController::class , 'paypal'])->name('paypal');
+    Route::get('success' , [PayPalController::class , 'success'])->name('paypal-success');
+    Route::get('cancel' , [PayPalController::class , 'cancel'])->name('cancel');
 
 
 Route::get('2FA', [PostController::class, 'twoFA'])->name('twoFA');
 Route::get('qrcode', [PostController::class, 'qrcode'])->name('qrcode');
-Route::post('/verify-two-factor', [VerificationController::class, 'verifyTwoFactor'])->name('verifyTwoFactor');
+Route::post('/verify-two-factor', [TwoFactorAuthenticationController::class, 'store'])->name('verifyTwoFactor');
 
 
 
 // Route for showing the two-factor authentication confirmation form
-Route::get('show', [TwoFactorAuthenticationConfirmationController::class, 'show'])
-    ->name('show');
+Route::get('qshow', [TwoFactorAuthenticationConfirmationController::class, 'qshow'])
+    ->name('qr-show');
+Route::post('destroy', [TwoFactorAuthenticationConfirmationController::class, 'destroy'])
+    ->name('qr-destroy');
 
 // Route for confirming two-factor authentication
 Route::post('/account/two-factor-authentication/confirm', [TwoFactorAuthenticationConfirmationController::class, 'store'])
     ->name('account.two-factor-authentication.confirm.store');
+
+
+Route::post('/submit-form', [ContactFormController::class, 'submitForm'])->name('submitForm');
+
+
 
 

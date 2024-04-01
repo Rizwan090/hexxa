@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Stripe\Checkout\Session;
 use Stripe\Stripe;
@@ -19,7 +20,7 @@ class StripeController extends Controller
         $price = $request->input('price') * 100;
 
         // Save post ID in the session
-        \Illuminate\Support\Facades\Session::put('post_id', $post->id);
+        \Illuminate\Support\Facades\Session::put('post_id',  $request->post_id);
 
         // Create Stripe session
         Stripe::setApiKey(config('stripe.sk'));
@@ -47,8 +48,9 @@ class StripeController extends Controller
     }
 
 
-    public function successStripe(Request $request)
+    public function successStripe(Request $request )
     {
+
         // Retrieve the post ID from the session
         $postId = \Illuminate\Support\Facades\Session::get('post_id');
 

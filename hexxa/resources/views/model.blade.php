@@ -38,6 +38,7 @@
                                                         <input type="hidden" name="productname" value="{{$post->title}}">
                                                         <input type="hidden" name="post_slug" value="{{ $post->slug }}">
 
+
                                                         <button type="submit" id="checkout-live-button" class="btn ss-btn">Stripe payment</button>
                                                     </form>
                                                 </div>
@@ -49,11 +50,14 @@
                             </x-layout>
 
                         @endif
+
                         <form action="/session" method="POST">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="price" value="{{$post->price}}">
                             <input type="hidden" name="productname" value="{{$post->title}}">
                             <input type="hidden" name="post_slug" value="{{ $post->slug }}">
+                            <input type="hidden" name="post_id" value="{{ $post->id }}">
+
 
                             <button type="submit" id="checkout-live-button" class="btn ss-btn">Stripe payment</button>
                         </form>
@@ -64,6 +68,8 @@
                             <input type="hidden" name="price" value="{{$post->price}}">
                             <input type="hidden" name="product_name" value="code">
                             <input type="hidden" name="post_slug" value="{{ $post->slug }}">
+                            <input type="hidden" name="post_id" value="{{ $post->id }}">
+
                             <!-- PayPal payment button -->
                             <button type="submit" class="btn ss-btn">PayPal payment</button>
                         </form>
